@@ -19,7 +19,6 @@
 
 package com.cabrol.francois.localism.view;
 
-import com.cabrol.francois.localism.Debug;
 import com.cabrol.francois.localism.calibration.AppScreenPlan;
 import com.cabrol.francois.localism.calibration.FingerRelativeToScreen;
 import com.cabrol.francois.localism.listener.LeapListener;
@@ -130,7 +129,6 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("yes i");
         keysPressedCode.add(e.getKeyCode());
     }
 
@@ -149,7 +147,6 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
     public void frontMostPointableListener(Pointable pointable) {
         if(keysPressedCode.size() == 1){
             AppScreenPlan appScreenPosition = MouseReplacement.getInstance().getAppScreenPosition();
-            Debug.getInstance().view("k " + keysPressedCode.get(0));
             if(keysPressedCode.get(0) == 18){    //ALT
                 if(appScreenPosition.getP1() == null)
                     appScreenPosition.setP1(pointable.tipPosition().getX(), pointable.tipPosition().getY(), pointable.tipPosition().getZ());

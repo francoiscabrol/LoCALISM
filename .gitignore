@@ -1,0 +1,18 @@
+# Java
+*.class
+*.jar
+
+# Intellij
+out/production
+out/test
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
