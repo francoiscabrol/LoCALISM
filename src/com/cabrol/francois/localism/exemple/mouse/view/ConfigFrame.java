@@ -17,7 +17,7 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.view;
+package com.cabrol.francois.localism.exemple.mouse.view;
 
 import javax.swing.*;
 import java.awt.*;

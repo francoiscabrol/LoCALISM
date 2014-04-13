@@ -17,7 +17,7 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.listener;
+package com.cabrol.francois.localism.calibration.listener;
 
 import com.leapmotion.leap.*;
 

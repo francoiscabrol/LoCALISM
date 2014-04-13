@@ -17,13 +17,13 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.view;
+package com.cabrol.francois.localism.calibration.view;
 
 import com.cabrol.francois.localism.calibration.AppScreenPlan;
 import com.cabrol.francois.localism.calibration.FingerRelativeToScreen;
-import com.cabrol.francois.localism.listener.LeapListener;
-import com.cabrol.francois.localism.listener.LeapMonitor;
-import com.cabrol.francois.localism.mouse.MouseReplacement;
+import com.cabrol.francois.localism.calibration.listener.LeapListener;
+import com.cabrol.francois.localism.calibration.listener.LeapMonitor;
+import com.cabrol.francois.localism.exemple.mouse.MouseReplacement;
 import com.leapmotion.leap.CircleGesture;
 import com.leapmotion.leap.Pointable;
 

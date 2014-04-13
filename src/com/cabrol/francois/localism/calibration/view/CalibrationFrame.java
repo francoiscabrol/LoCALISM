@@ -17,19 +17,34 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.listener;
+package com.cabrol.francois.localism.calibration.view;
 
-import com.leapmotion.leap.CircleGesture;
-import com.leapmotion.leap.Pointable;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created with IntelliJ IDEA.
- * User: francois * Date: 2014-01-22
+ * User: francois * Date: 2014-01-23
  */
-public interface LeapListener {
+public class CalibrationFrame extends JFrame {
 
-    public void circleGestureListener(CircleGesture circle);
+    public CalibrationFrame() throws HeadlessException {
+        super("Leap screen calibration test" );
 
-    public void frontMostPointableListener(Pointable pointable);
+        Container pane = getContentPane();
+        //pane.setLayout( new BoxLayout( pane, BoxLayout.X_AXIS ) );
+
+        pane.add( new CalibrationPanel() );
+
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+
+        setSize((int)dimension.getWidth()/2, (int)dimension.getHeight()/2);
+
+        setVisible( true );
+
+        int x = (int) ((dimension.getWidth() - getWidth()) / 2);
+        int y = (int) ((dimension.getHeight() - getHeight()) / 2);
+        setLocation(x, y);
+    }
 
 }
