@@ -17,7 +17,7 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.calibration;
+package com.cabrol.francois.localism.calibration.screen;
 
 import com.leapmotion.leap.Pointable;
 import com.leapmotion.leap.Vector;
@@ -169,7 +169,7 @@ public class AppScreenPlan {
 
     @Override
     public String toString() {
-        return "com.cabrol.francois.localism.calibration.AppScreenPlan{\n" +
+        return "com.cabrol.francois.localism.calibration.screen.AppScreenPlan{\n" +
                 "p1=" + p1 +
                 "\np2=" + p2 +
                 "\np3=" + p3 +

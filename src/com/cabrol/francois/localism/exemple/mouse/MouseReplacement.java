@@ -19,8 +19,8 @@
 
 package com.cabrol.francois.localism.exemple.mouse;
 
-import com.cabrol.francois.localism.calibration.AppScreenPlan;
-import com.cabrol.francois.localism.calibration.FingerRelativeToScreen;
+import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
+import com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;
 import com.cabrol.francois.localism.calibration.listener.LeapListener;
 import com.leapmotion.leap.CircleGesture;
 import com.leapmotion.leap.Gesture;

@@ -19,8 +19,8 @@
 
 package com.cabrol.francois.localism.calibration.view;
 
-import com.cabrol.francois.localism.calibration.AppScreenPlan;
-import com.cabrol.francois.localism.calibration.FingerRelativeToScreen;
+import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
+import com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;
 import com.cabrol.francois.localism.calibration.listener.LeapListener;
 import com.cabrol.francois.localism.calibration.listener.LeapMonitor;
 import com.cabrol.francois.localism.exemple.mouse.MouseReplacement;
@@ -104,7 +104,7 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
     }
 
     private void drawInformationAboutFingerAndScreen(Graphics g, AppScreenPlan appScreenPosition, FingerRelativeToScreen fingerRelativeToScreen) {
-        String p1 = "com.cabrol.francois.localism.calibration.AppScreenPlan{ p1:" + appScreenPosition.getP1() + ",";
+        String p1 = "com.cabrol.francois.localism.calibration.screen.AppScreenPlan{ p1:" + appScreenPosition.getP1() + ",";
         g.drawString(p1, getWidth()-500, 40);
         String p2 = "p2:" + appScreenPosition.getP2() + ",";
         g.drawString(p2, getWidth()-500, 60);
