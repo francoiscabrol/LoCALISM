@@ -24,8 +24,7 @@ import com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;
 import com.cabrol.francois.localism.calibration.listener.LeapListener;
 import com.cabrol.francois.localism.calibration.listener.LeapMonitor;
 import com.cabrol.francois.localism.exemple.mouse.MouseReplacement;
-import com.leapmotion.leap.CircleGesture;
-import com.leapmotion.leap.Pointable;
+import com.leapmotion.leap.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -103,12 +102,16 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
         g.drawOval((xAdj - (ray/2)), (yAdj - (ray/2)), ray, ray);
     }
 
+    private String vectToString (com.leapmotion.leap.Vector p) {
+        return ((p==null) ? "Undefined" : p.toString());
+    }
+
     private void drawInformationAboutFingerAndScreen(Graphics g, AppScreenPlan appScreenPosition, FingerRelativeToScreen fingerRelativeToScreen) {
-        String p1 = "com.cabrol.francois.localism.calibration.screen.AppScreenPlan{ p1:" + appScreenPosition.getP1() + ",";
+        String p1 = "AppScreenPlan { p1:" + vectToString(appScreenPosition.getP1()) + ",";
         g.drawString(p1, getWidth()-500, 40);
-        String p2 = "p2:" + appScreenPosition.getP2() + ",";
+        String p2 = "p2:" + vectToString(appScreenPosition.getP2()) + ",";
         g.drawString(p2, getWidth()-500, 60);
-        String p3 = "p3:" + appScreenPosition.getP3() + " }";
+        String p3 = "p3:" + vectToString(appScreenPosition.getP3()) + " }";
         g.drawString(p3, getWidth()-500, 80);
         if(fingerRelativeToScreen!=null){
             String p = "fingerRelativeToScreen: x:" + fingerRelativeToScreen.getProjectionOfFingerWithDirection().getX() + ", y:" + fingerRelativeToScreen.getProjectionOfFingerWithDirection().getY() + ", z:" + fingerRelativeToScreen.getProjectionOfFingerWithDirection().getZ();
