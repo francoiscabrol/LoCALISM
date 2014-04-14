@@ -39,6 +39,7 @@ public class AppScreenPlan {
     Point appWindowLocationOnScreen;
     private int appWidth;
     private int appHeight;
+    private Vector normal;
 
 
     public AppScreenPlan() {
@@ -121,7 +122,21 @@ public class AppScreenPlan {
         return f;
     }
 
-    public Vector getNormalVector(){
+    public Vector getNormalVector() {
+        if (!this.isDefined())
+            return null;
+        if (normal == null)
+            normal = calculateNormalVector();
+        return normal;
+    }
+
+    public FingerRelativeToScreen getFingerRelativeToScreen(Pointable pointable) {
+        if(!this.isDefined())
+            return null;
+        return new FingerRelativeToScreen(pointable, this);
+    }
+
+    public Vector calculateNormalVector(){
         float xU = p2.getX() - p1.getX();
         float yU = p2.getY() - p1.getY();
         float zU = p2.getZ() - p1.getZ();
@@ -134,14 +149,7 @@ public class AppScreenPlan {
         float yN = zU * xV - xU * zV;
         float zN = xU * yV - yU * xV;
 
-        Vector normal = new Vector(xN, yN, zN);
-        return normal;
-    }
-
-    public FingerRelativeToScreen getFingerRelativeToScreen(Pointable pointable) {
-        if(!this.isDefined())
-            return null;
-        return new FingerRelativeToScreen(pointable, this);
+        return new Vector(xN, yN, zN);
     }
 
     public boolean isDefined() {

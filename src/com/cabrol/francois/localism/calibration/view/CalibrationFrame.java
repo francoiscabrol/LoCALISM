@@ -29,19 +29,14 @@ import java.awt.*;
 public class CalibrationFrame extends JFrame {
 
     public CalibrationFrame() throws HeadlessException {
-        super("Leap screen calibration test" );
+        super("Leap screen calibration window" );
 
         Container pane = getContentPane();
-        //pane.setLayout( new BoxLayout( pane, BoxLayout.X_AXIS ) );
-
         pane.add( new CalibrationPanel() );
 
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-
         setSize((int)dimension.getWidth()/2, (int)dimension.getHeight()/2);
-
         setVisible( true );
-
         int x = (int) ((dimension.getWidth() - getWidth()) / 2);
         int y = (int) ((dimension.getHeight() - getHeight()) / 2);
         setLocation(x, y);

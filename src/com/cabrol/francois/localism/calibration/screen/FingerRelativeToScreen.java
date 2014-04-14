@@ -106,7 +106,7 @@ public class FingerRelativeToScreen {
                     + n.getZ() * p1.getZ());
 
         //calculation of k from the plane equation
-        float k = -(u.getX() * a.getX()
+        float k = (u.getX() * a.getX()
                     + u.getY() * a.getY()
                     + u.getZ() * a.getZ()
                     + d)
@@ -124,7 +124,6 @@ public class FingerRelativeToScreen {
 
     private boolean calculateIsTouching() {
         int offset = 100000;
-        boolean isTouching;
         Vector p1 = screenPlan.getP1();
         Vector p1M = new Vector(getFrontFingerVector().getX()-p1.getX(), getFrontFingerVector().getY()-p1.getY(), getFrontFingerVector().getZ()-p1.getZ());
         float p = p1M.dot(planNormalVector);

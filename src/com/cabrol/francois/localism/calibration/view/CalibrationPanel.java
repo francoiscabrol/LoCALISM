@@ -25,6 +25,7 @@ import com.cabrol.francois.localism.calibration.listener.LeapListener;
 import com.cabrol.francois.localism.calibration.listener.LeapMonitor;
 import com.cabrol.francois.localism.exemple.mouse.MouseReplacement;
 import com.leapmotion.leap.*;
+import com.leapmotion.leap.Vector;
 
 import javax.swing.*;
 import java.awt.*;
@@ -102,7 +103,7 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
         g.drawOval((xAdj - (ray/2)), (yAdj - (ray/2)), ray, ray);
     }
 
-    private String vectToString (com.leapmotion.leap.Vector p) {
+    private String vectToString (Vector p) {
         return ((p==null) ? "Undefined" : p.toString());
     }
 
