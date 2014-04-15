@@ -105,6 +105,7 @@ public class AppScreenPlan {
     }
 
     public int leapCoordToAppCoordX(float coord) {
+        //TODO: Verify that it is the good calcul
         int f = (int) ((int) ((
                 (getP3().getX() - getP2().getX())
                         / getAppWidth())*coord)
@@ -112,6 +113,7 @@ public class AppScreenPlan {
         return f;
     }
     public int leapCoordToAppCoordY(float coord) {
+        //TODO: Verify that it is the good calcul
         int f = (int) ((int) (
                 ((getP2().getY() - getP1().getY())
                     / getAppHeight())*coord)
@@ -120,12 +122,14 @@ public class AppScreenPlan {
     }
 
     public int leapCoordToScreenCoordX(float coord) {
+        //TODO: Verify that it is the good calcul
         int f = (int) (((int) (
                 ((getP3().getX() - getP2().getX()))*coord)
                     / getAppWidth()));
         return f;
     }
     public int leapCoordToScreenCoordY(float coord) {
+        //TODO: Verify that it is the good calcul
         int f = (int) (((int) (
                 ((getP2().getY() - getP1().getY())
                     / getAppHeight())

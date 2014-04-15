@@ -72,6 +72,7 @@ public class FingerRelativeToScreen {
 
 
     private Vector calculateProjectionOfFinger(Vector fingerPoint, AppScreenPlan screenPlan) {
+        //TODO: Verify and test the equation
         Vector p1 = screenPlan.getP1();
         float d = -(planNormalVector.getX() * p1.getX()
                 + planNormalVector.getY() * p1.getY()
@@ -91,6 +92,7 @@ public class FingerRelativeToScreen {
     }
 
     private Vector calculateProjectionOfFingerWithDirection(Pointable pointable, AppScreenPlan screenPlan) {
+        //TODO: Verify and test the equation
         //plane equation defined as  a.x + b.y + c.z + d = 0 ( 0 )
         //x0 is the project on the vector pointable.direction() on the plane
         Vector a = pointable.tipPosition();
@@ -123,6 +125,7 @@ public class FingerRelativeToScreen {
     }
 
     private boolean calculateIsTouching() {
+        //TODO: Find the best offset
         int offset = 100000;
         Vector p1 = screenPlan.getP1();
         Vector p1M = new Vector(getFrontFingerVector().getX()-p1.getX(), getFrontFingerVector().getY()-p1.getY(), getFrontFingerVector().getZ()-p1.getZ());
