@@ -92,9 +92,9 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
     }
 
     private void drawFingerRelativeToScreen(Graphics g, AppScreenPlan appScreenPosition, FingerRelativeToScreen fingerRelativeToScreen) {
-        int xAdj = appScreenPosition.leapCoordToAppCoordX(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getX()); //Math.round((x) * getWidth()/(appScreenPosition.getP2().getX() - appScreenPosition.getP3().getX()));
-        int yAdj =  appScreenPosition.leapCoordToAppCoordY(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getY()); // Math.round((y) + getHeight() / (appScreenPosition.getP2().getY() - appScreenPosition.getP1().getY()));
-//        float zAdj = 10;
+        int xAdj = appScreenPosition.leapCoordToAppCoordX(fingerRelativeToScreen.getProjectionOfFinger().getX()); //Math.round((x) * getWidth()/(appScreenPosition.getP2().getX() - appScreenPosition.getP3().getX()));
+        int yAdj =  appScreenPosition.leapCoordToAppCoordY(fingerRelativeToScreen.getProjectionOfFinger().getY()); // Math.round((y) + getHeight() / (appScreenPosition.getP2().getY() - appScreenPosition.getP1().getY()));
+//        float zAdj = getProjectionOfFinger
 //        if(fingerRelativeToScreen != null)
 //            zAdj = (fingerRelativeToScreen.getDistanceFromScreen()*5) ;
         int ray = 10;
@@ -115,7 +115,7 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
         String p3 = "p3:" + vectToString(appScreenPosition.getP3()) + " }";
         g.drawString(p3, getWidth()-500, 80);
         if(fingerRelativeToScreen!=null){
-            String p = "fingerRelativeToScreen: x:" + fingerRelativeToScreen.getProjectionOfFingerWithDirection().getX() + ", y:" + fingerRelativeToScreen.getProjectionOfFingerWithDirection().getY() + ", z:" + fingerRelativeToScreen.getProjectionOfFingerWithDirection().getZ();
+            String p = "fingerRelativeToScreen: x:" + fingerRelativeToScreen.getProjectionOfFinger().getX() + ", y:" + fingerRelativeToScreen.getProjectionOfFinger().getY() + ", z:" + fingerRelativeToScreen.getProjectionOfFinger().getZ();
             g.drawString(p, getWidth()-500, 120);
         }
         if(fingerRelativeToScreen!=null){

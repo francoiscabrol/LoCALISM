@@ -105,20 +105,31 @@ public class AppScreenPlan {
     }
 
     public int leapCoordToAppCoordX(float coord) {
-        int f = (int) ((int) ((getAppWidth()/(getP3().getX() - getP2().getX()))*coord) + getAppWindowLocationOnScreen().getX());
+        int f = (int) ((int) ((
+                (getP3().getX() - getP2().getX())
+                        / getAppWidth())*coord)
+                + getAppWindowLocationOnScreen().getX());
         return f;
     }
     public int leapCoordToAppCoordY(float coord) {
-        int f = (int) (((int) ((getAppHeight()/(getP2().getY() - getP1().getY()))*coord)) - getAppWindowLocationOnScreen().getY());
+        int f = (int) ((int) (
+                ((getP2().getY() - getP1().getY())
+                    / getAppHeight())*coord)
+                - getAppWindowLocationOnScreen().getY());
         return f;
     }
 
     public int leapCoordToScreenCoordX(float coord) {
-        int f = (int) (((int) ((getAppWidth()/(getP3().getX() - getP2().getX()))*coord)) + getAppWindowLocationOnScreen().getX() * 2);
+        int f = (int) (((int) (
+                ((getP3().getX() - getP2().getX()))*coord)
+                    / getAppWidth()));
         return f;
     }
     public int leapCoordToScreenCoordY(float coord) {
-        int f = (int) (((int) ((getAppHeight()/(getP2().getY() - getP1().getY()))*coord)));
+        int f = (int) (((int) (
+                ((getP2().getY() - getP1().getY())
+                    / getAppHeight())
+                *coord)));
         return f;
     }
 

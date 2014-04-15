@@ -76,7 +76,7 @@ public class FingerRelativeToScreen {
         float d = -(planNormalVector.getX() * p1.getX()
                 + planNormalVector.getY() * p1.getY()
                 + planNormalVector.getZ() * p1.getZ());
-        float k = -(planNormalVector.getX() * fingerPoint.getX()
+        float k = (planNormalVector.getX() * fingerPoint.getX()
                     + planNormalVector.getY() * fingerPoint.getY()
                     + planNormalVector.getZ() * fingerPoint.getZ()+ d)
                 / (planNormalVector.getX()* planNormalVector.getX()
