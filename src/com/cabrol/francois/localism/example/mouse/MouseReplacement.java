@@ -17,7 +17,7 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.exemple.mouse;
+package com.cabrol.francois.localism.example.mouse;
 
 import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
 import com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;

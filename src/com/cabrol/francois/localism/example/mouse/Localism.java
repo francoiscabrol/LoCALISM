@@ -17,10 +17,10 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.exemple.mouse;
+package com.cabrol.francois.localism.example.mouse;
 
 import com.cabrol.francois.localism.calibration.listener.LeapFrontController;
-import com.cabrol.francois.localism.exemple.mouse.view.ConfigFrame;
+import com.cabrol.francois.localism.example.mouse.view.ConfigFrame;
 import com.leapmotion.leap.Controller;
 
 public class Localism {

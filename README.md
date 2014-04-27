@@ -8,5 +8,6 @@ The idea is to create a screen calibration system. I'd like to get localism work
 
 *Written in Java*
 
-  * Root package: com.cabrol.francois.localism
+  * Calibration system: com.cabrol.francois.localism.calibration
+  * Example: com.cabrol.francois.localism.example
   * Dependence: LeapJava.jar (leap motion library for Java)

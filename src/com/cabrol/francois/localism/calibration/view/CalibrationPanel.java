@@ -23,7 +23,7 @@ import com.cabrol.francois.localism.calibration.listener.LeapFrontController;
 import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
 import com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;
 import com.cabrol.francois.localism.calibration.listener.LeapListener;
-import com.cabrol.francois.localism.exemple.mouse.MouseReplacement;
+import com.cabrol.francois.localism.example.mouse.MouseReplacement;
 import com.leapmotion.leap.*;
 import com.leapmotion.leap.Vector;
 
