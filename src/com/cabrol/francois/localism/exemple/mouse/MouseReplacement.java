@@ -91,14 +91,12 @@ public class MouseReplacement implements LeapListener {
             }
             wasTouching = fingerRelativeToScreen.isTouching();
 
-            FingerRelativeToScreen point = fingerRelativeToScreen;
-
-            float xAdj = appScreenPosition.leapCoordToScreenCoordX(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getX());
-            float yAdj = appScreenPosition.leapCoordToScreenCoordY(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getY());
+            float xAdj = appScreenPosition.leapCoordToScreenCoordX(fingerRelativeToScreen.getProjectionOfFinger().getX());
+            float yAdj = appScreenPosition.leapCoordToScreenCoordY(fingerRelativeToScreen.getProjectionOfFinger().getY());
 
             int intX = Math.round(xAdj);
             int intY = Math.round(yAdj);
-            robot.mouseMove(intX, intY);  // positionnement du curseur sur le pixel 35,35 de votre écran
+            robot.mouseMove(intX, intY);
         }
     }
 

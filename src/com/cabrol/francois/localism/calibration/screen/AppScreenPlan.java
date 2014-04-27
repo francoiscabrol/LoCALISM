@@ -179,4 +179,8 @@ public class AppScreenPlan {
                 "\np3=" + p3 +
                 "\n"+'}';
     }
+
+    public void reset() {
+        p1 = p2 = p3 = null;
+    }
 }

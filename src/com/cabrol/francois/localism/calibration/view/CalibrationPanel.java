@@ -92,8 +92,8 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
     }
 
     private void drawFingerRelativeToScreen(Graphics g, AppScreenPlan appScreenPosition, FingerRelativeToScreen fingerRelativeToScreen) {
-        int xAdj = appScreenPosition.leapCoordToAppCoordX(fingerRelativeToScreen.getProjectionOfFinger().getX()); //Math.round((x) * getWidth()/(appScreenPosition.getP2().getX() - appScreenPosition.getP3().getX()));
-        int yAdj =  appScreenPosition.leapCoordToAppCoordY(fingerRelativeToScreen.getProjectionOfFinger().getY()); // Math.round((y) + getHeight() / (appScreenPosition.getP2().getY() - appScreenPosition.getP1().getY()));
+        int xAdj = appScreenPosition.leapCoordToAppCoordX(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getX()); //Math.round((x) * getWidth()/(appScreenPosition.getP2().getX() - appScreenPosition.getP3().getX()));
+        int yAdj =  appScreenPosition.leapCoordToAppCoordY(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getY()); // Math.round((y) + getHeight() / (appScreenPosition.getP2().getY() - appScreenPosition.getP1().getY()));
 //        float zAdj = getProjectionOfFinger
 //        if(fingerRelativeToScreen != null)
 //            zAdj = (fingerRelativeToScreen.getDistanceFromScreen()*5) ;
@@ -158,6 +158,8 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
                     appScreenPosition.setP2(pointable.tipPosition().getX(), pointable.tipPosition().getY(), pointable.tipPosition().getZ());
                 else if(appScreenPosition.getP3() == null)
                     appScreenPosition.setP3(pointable.tipPosition().getX(), pointable.tipPosition().getY(), pointable.tipPosition().getZ());
+                else
+                    appScreenPosition.reset();
                 keysPressedCode.remove((Integer) 18);
             }
             System.out.println(appScreenPosition.toString());
