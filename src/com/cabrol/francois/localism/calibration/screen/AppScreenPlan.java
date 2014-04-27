@@ -19,6 +19,7 @@
 
 package com.cabrol.francois.localism.calibration.screen;
 
+import com.cabrol.francois.localism.Debug;
 import com.leapmotion.leap.Pointable;
 import com.leapmotion.leap.Vector;
 
@@ -56,6 +57,7 @@ public class AppScreenPlan {
     public Vector getP3() {
         return p3;
     }
+
     public void setP1(Vector p1) {
         this.p1 = p1;
     }
@@ -104,37 +106,32 @@ public class AppScreenPlan {
         this.appHeight = appHeight;
     }
 
-    public int leapCoordToAppCoordX(float coord) {
-        //TODO: Verify that it is the good calcul
-        int f = (int) ((int) ((
-                (getP3().getX() - getP2().getX())
-                        / getAppWidth())*coord)
-                + getAppWindowLocationOnScreen().getX());
-        return f;
-    }
-    public int leapCoordToAppCoordY(float coord) {
-        //TODO: Verify that it is the good calcul
-        int f = (int) ((int) (
-                ((getP2().getY() - getP1().getY())
-                    / getAppHeight())*coord)
-                - getAppWindowLocationOnScreen().getY());
-        return f;
+    public float getRatioAppScreenWidth() {
+        return getAppWidth() / (Math.abs(getP3().getX() - getP2().getX()));
     }
 
-    public int leapCoordToScreenCoordX(float coord) {
-        //TODO: Verify that it is the good calcul
-        int f = (int) (((int) (
-                ((getP3().getX() - getP2().getX()))*coord)
-                    / getAppWidth()));
-        return f;
+    public float getRatioAppScreenHeight() {
+        return getAppHeight() / (Math.abs(getP2().getY() - getP1().getY()));
     }
-    public int leapCoordToScreenCoordY(float coord) {
+
+    public int leapCoordToAppCoordX(float XCoord) {
         //TODO: Verify that it is the good calcul
-        int f = (int) (((int) (
-                ((getP2().getY() - getP1().getY())
-                    / getAppHeight())
-                *coord)));
-        return f;
+        return (int) ((XCoord-getP2().getX())*getRatioAppScreenWidth());
+    }
+
+    public int leapCoordToAppCoordY(float YCoord) {
+        //TODO: Verify that it is the good calcul
+        return (int) (-(YCoord-getP2().getY())*getRatioAppScreenHeight());
+    }
+
+    public int leapCoordToScreenCoordX(float XCoord) {
+        //TODO: Verify that it is the good calcul
+        int x = (int) (((XCoord-getP2().getX())*getRatioAppScreenWidth())+getAppWindowLocationOnScreen().getX());
+        return x;
+    }
+    public int leapCoordToScreenCoordY(float YCoord) {
+        //TODO: Verify that it is the good calcul
+        return (int) ((-(YCoord-getP2().getY())*getRatioAppScreenHeight())+getAppWindowLocationOnScreen().getY());
     }
 
     public Vector getNormalVector() {

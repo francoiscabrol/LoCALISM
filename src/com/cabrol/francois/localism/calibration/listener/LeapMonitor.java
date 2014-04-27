@@ -71,8 +71,7 @@ public class LeapMonitor extends Listener {
         listeners.add(listener);
     }
 
-    private void processFrame(Frame frame )
-    {
+    private void processFrame(Frame frame ){
         if(!frame.pointables().isEmpty())
             notifyFrontMostPointable(frame.pointables().frontmost());
 

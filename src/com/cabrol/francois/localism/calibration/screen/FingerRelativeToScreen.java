@@ -77,7 +77,7 @@ public class FingerRelativeToScreen {
         float d = -(planNormalVector.getX() * p1.getX()
                 + planNormalVector.getY() * p1.getY()
                 + planNormalVector.getZ() * p1.getZ());
-        float k = (planNormalVector.getX() * fingerPoint.getX()
+        float k = -(planNormalVector.getX() * fingerPoint.getX()
                     + planNormalVector.getY() * fingerPoint.getY()
                     + planNormalVector.getZ() * fingerPoint.getZ()+ d)
                 / (planNormalVector.getX()* planNormalVector.getX()
@@ -108,7 +108,7 @@ public class FingerRelativeToScreen {
                     + n.getZ() * p1.getZ());
 
         //calculation of k from the plane equation
-        float k = (u.getX() * a.getX()
+        float k = -(u.getX() * a.getX()
                     + u.getY() * a.getY()
                     + u.getZ() * a.getZ()
                     + d)
