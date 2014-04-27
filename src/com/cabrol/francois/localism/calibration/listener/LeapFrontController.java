@@ -32,19 +32,19 @@ import java.util.List;
  * Time: 15:52
  * To change this template use File | Settings | File Templates.
  */
-public class LeapMonitor extends Listener {
+public class LeapFrontController extends Listener {
 
-    private static LeapMonitor INSTANCE = null;
+    private static LeapFrontController INSTANCE = null;
 
     List<LeapListener> listeners = new ArrayList<LeapListener>();
 
-    public LeapMonitor() {
+    public LeapFrontController() {
 
     }
 
-    public synchronized static LeapMonitor getInstance() {
+    public synchronized static LeapFrontController getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new LeapMonitor();
+            INSTANCE = new LeapFrontController();
         }
         return INSTANCE;
     }

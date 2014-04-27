@@ -19,10 +19,10 @@
 
 package com.cabrol.francois.localism.calibration.view;
 
+import com.cabrol.francois.localism.calibration.listener.LeapFrontController;
 import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
 import com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;
 import com.cabrol.francois.localism.calibration.listener.LeapListener;
-import com.cabrol.francois.localism.calibration.listener.LeapMonitor;
 import com.cabrol.francois.localism.exemple.mouse.MouseReplacement;
 import com.leapmotion.leap.*;
 import com.leapmotion.leap.Vector;
@@ -34,15 +34,21 @@ import java.awt.event.KeyListener;
 import java.util.*;
 
 /**
- * Created with IntelliJ IDEA.
- * User: francois * Date: 2014-01-23
+ * @author François Cabrol <francois.cabrol@live.fr>
+ * @since 2014-01-23
  */
 public class CalibrationPanel extends JPanel implements KeyListener, LeapListener {
 
+    /** List of keyboard keys pressed */
     java.util.List<Integer> keysPressedCode = new ArrayList<>();
 
+    /**
+     * Constructor
+     * Add the panel as LeapFrontController listener
+     * Add key listener
+     */
     public CalibrationPanel() {
-        LeapMonitor.getInstance().addLeapListener(this);
+        LeapFrontController.getInstance().addLeapListener(this);
         setFocusable(true);
         addKeyListener(this);
         repaint();
@@ -59,6 +65,7 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
             g.setColor(Color.BLACK);
         }
 
+        //TODO Getting finger relative to screen and finger relative to screen independent from MouseReplacement
         AppScreenPlan appScreenPosition = MouseReplacement.getInstance().getAppScreenPosition();
         FingerRelativeToScreen fingerRelativeToScreen = MouseReplacement.getInstance().getFingerRelativeToScreen();
 

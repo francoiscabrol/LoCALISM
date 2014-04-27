@@ -19,15 +19,15 @@
 
 package com.cabrol.francois.localism.exemple.mouse;
 
-import com.cabrol.francois.localism.calibration.listener.LeapMonitor;
+import com.cabrol.francois.localism.calibration.listener.LeapFrontController;
 import com.cabrol.francois.localism.exemple.mouse.view.ConfigFrame;
 import com.leapmotion.leap.Controller;
 
 public class Localism {
 
     public static void main(String[] args) {
-        LeapMonitor.getInstance().addLeapListener(MouseReplacement.getInstance());
-        Controller controller = new Controller(LeapMonitor.getInstance());
+        LeapFrontController.getInstance().addLeapListener(MouseReplacement.getInstance());
+        Controller controller = new Controller(LeapFrontController.getInstance());
 
         ConfigFrame frame = new ConfigFrame();
     }
