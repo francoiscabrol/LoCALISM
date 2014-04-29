@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 François Cabrol.
+ * Copyright (c) 2014 Francois Cabrol.
  *
  *  This file is part of LoCALISM.
  *

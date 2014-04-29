@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 François Cabrol.
+ * Copyright (c) 2014 Francois Cabrol.
  *
  *  This file is part of LoCALISM.
  *
@@ -34,7 +34,7 @@ import java.awt.event.KeyListener;
 import java.util.*;
 
 /**
- * @author François Cabrol <francois.cabrol@live.fr>
+ * @author Francois Cabrol <francois.cabrol@live.fr>
  * @since 2014-01-23
  */
 public class CalibrationPanel extends JPanel implements KeyListener, LeapListener {
@@ -44,8 +44,8 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
 
     /**
      * Constructor
-     * Add the panel as LeapFrontController listener
-     * Add key listener
+     * add the panel as LeapFrontController listener
+     * and add key listener
      */
     public CalibrationPanel() {
         LeapFrontController.getInstance().addLeapListener(this);
