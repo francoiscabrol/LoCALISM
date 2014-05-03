@@ -112,14 +112,9 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
      * @param fingerRelativeToScreen finger projection to draw
      */
     private void drawFingerRelativeToScreen(Graphics g, AppScreenPlan appScreenPosition, FingerRelativeToScreen fingerRelativeToScreen) {
-        int xAdj = appScreenPosition.leapCoordToAppCoordX(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getX()); //Math.round((x) * getWidth()/(appScreenPosition.getP2().getX() - appScreenPosition.getP3().getX()));
-        int yAdj =  appScreenPosition.leapCoordToAppCoordY(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getY()); // Math.round((y) + getHeight() / (appScreenPosition.getP2().getY() - appScreenPosition.getP1().getY()));
-//        float zAdj = getProjectionOfFinger
-//        if(fingerRelativeToScreen != null)
-//            zAdj = (fingerRelativeToScreen.getDistanceFromScreen()*5) ;
+        int xAdj = appScreenPosition.leapCoordToAppCoordX(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getX());
+        int yAdj =  appScreenPosition.leapCoordToAppCoordY(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getY());
         int ray = 10;
-
-       // int intZ = Math.round(zAdj);
         g.drawOval((xAdj - (ray/2)), (yAdj - (ray/2)), ray, ray);
     }
 
@@ -161,7 +156,7 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
 
     @Override
     public void keyTyped(KeyEvent e) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        // No implementation
     }
 
     @Override
@@ -177,7 +172,7 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
 
     @Override
     public void circleGestureListener(CircleGesture circle) {
-
+        // No implementation
     }
 
     @Override
