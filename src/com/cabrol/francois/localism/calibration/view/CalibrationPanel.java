@@ -34,6 +34,8 @@ import java.awt.event.KeyListener;
 import java.util.*;
 
 /**
+ * The panel that allow to calibrate the screen plan with the leap motion
+ * and get the visual feedback of the finger projection point on the screen
  * @author Francois Cabrol <francois.cabrol@live.fr>
  * @since 2014-01-23
  */
@@ -79,6 +81,11 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
         drawInformationAboutFingerAndScreen(g, appScreenPosition, fingerRelativeToScreen);
     }
 
+    /**
+     * Draw the message that explains how to do the calibration
+     * @param g Graphics where to draw
+     * @param appScreenPosition Instance of the screen plan before calibration
+     */
     private void drawMessage(Graphics g, AppScreenPlan appScreenPosition) {
         final int l = 20;
         String message = "";
@@ -98,6 +105,12 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
         g.drawString(s, getWidth()/2-200, getHeight()/2);
     }
 
+    /**
+     *
+     * @param g Draw the finger projection point to get visual feedback
+     * @param appScreenPosition screen plan after calibration
+     * @param fingerRelativeToScreen finger projection to draw
+     */
     private void drawFingerRelativeToScreen(Graphics g, AppScreenPlan appScreenPosition, FingerRelativeToScreen fingerRelativeToScreen) {
         int xAdj = appScreenPosition.leapCoordToAppCoordX(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getX()); //Math.round((x) * getWidth()/(appScreenPosition.getP2().getX() - appScreenPosition.getP3().getX()));
         int yAdj =  appScreenPosition.leapCoordToAppCoordY(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getY()); // Math.round((y) + getHeight() / (appScreenPosition.getP2().getY() - appScreenPosition.getP1().getY()));
@@ -110,6 +123,10 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
         g.drawOval((xAdj - (ray/2)), (yAdj - (ray/2)), ray, ray);
     }
 
+    /**
+     * @param p Any vector
+     * @return the vector toString or the string "Undefined" if p is null
+     */
     private String vectToString (Vector p) {
         return ((p==null) ? "Undefined" : p.toString());
     }
