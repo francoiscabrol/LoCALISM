@@ -19,6 +19,7 @@
 
 package com.cabrol.francois.localism.calibration.listener;
 
+import com.cabrol.francois.localism.calibration.Debug;
 import com.leapmotion.leap.*;
 
 import java.util.ArrayList;
@@ -51,14 +52,14 @@ public class LeapFrontController extends Listener {
 
     @Override
     public void onInit(Controller controller) {
-        System.out.println("Init");
+        Debug.getInstance().leap("Init");
         controller.setPolicyFlags(Controller.PolicyFlag.swigToEnum(1));
         controller.enableGesture(Gesture.Type.TYPE_CIRCLE);
     }
 
     @Override
     public void onExit(Controller controller) {
-        System.out.println("Exit");
+        Debug.getInstance().leap("Exit");
     }
 
     @Override

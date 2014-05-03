@@ -169,7 +169,6 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
                     appScreenPosition.reset();
                 keysPressedCode.remove((Integer) 18);
             }
-            System.out.println(appScreenPosition.toString());
             MouseReplacement.getInstance().getAppScreenPosition().setAppHeight(getHeight());
             MouseReplacement.getInstance().getAppScreenPosition().setAppWidth(getWidth());
             MouseReplacement.getInstance().getAppScreenPosition().setAppWindowLocationOnScreen(getLocationOnScreen());

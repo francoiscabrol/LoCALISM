@@ -19,7 +19,6 @@
 
 package com.cabrol.francois.localism.calibration.screen;
 
-import com.cabrol.francois.localism.Debug;
 import com.leapmotion.leap.Pointable;
 import com.leapmotion.leap.Vector;
 

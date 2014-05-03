@@ -112,13 +112,13 @@ public class MouseReplacement implements LeapListener {
                     robot.mouseRelease(InputEvent.BUTTON1_MASK);
                     robot.mousePress(InputEvent.BUTTON1_MASK);
                     robot.mouseRelease(InputEvent.BUTTON1_MASK);
-                    System.out.println("raduis:" + circle.radius());
+                    Debug.getInstance().mouse("raduis:" + circle.radius());
                 } else {
                     clockwiseness = "counterclockwise";
                     robot.mousePress(InputEvent.BUTTON3_MASK);
                     robot.mouseRelease(InputEvent.BUTTON3_MASK);
                 }
-                System.out.println("end of swipe "+ clockwiseness);
+                Debug.getInstance().mouse("end of swipe "+ clockwiseness);
             }
         }
     }

@@ -17,7 +17,7 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism;
+package com.cabrol.francois.localism.calibration;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,6 +28,7 @@ public class Debug {
     private static Debug INSTANCE = null;
 
     private boolean view = true;
+    private boolean leap = true;
 
     public Debug() {
     }
@@ -44,5 +45,9 @@ public class Debug {
             System.out.println("[VIEW] " + msg);
     }
 
+    public void leap(String msg){
+        if(leap)
+            System.out.println("[LEAP] " + msg);
+    }
 
 }
