@@ -106,8 +106,8 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
     }
 
     /**
-     *
-     * @param g Draw the finger projection point to get visual feedback
+     * Draw the finger projection point to get visual feedback
+     * @param g Graphics where to draw
      * @param appScreenPosition screen plan after calibration
      * @param fingerRelativeToScreen finger projection to draw
      */
@@ -131,6 +131,15 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
         return ((p==null) ? "Undefined" : p.toString());
     }
 
+    /**
+     * Show finger projection coordinates
+     * and show 3 points coordinates of the screen plan
+     * and show the finger distance from screen
+     * and show if the finger is touching the screen plan
+     * @param g Graphics where to draw
+     * @param appScreenPosition
+     * @param fingerRelativeToScreen
+     */
     private void drawInformationAboutFingerAndScreen(Graphics g, AppScreenPlan appScreenPosition, FingerRelativeToScreen fingerRelativeToScreen) {
         String p1 = "AppScreenPlan { p1:" + vectToString(appScreenPosition.getP1()) + ",";
         g.drawString(p1, getWidth()-500, 40);
