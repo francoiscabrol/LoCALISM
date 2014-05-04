@@ -37,7 +37,7 @@ public class CalibrationFrame extends JFrame {
     }
 
     /**
-     * Place the frame in the screen center
+     * Place the frame in the center of the screen
      */
     private void initFramePosition() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();

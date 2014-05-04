@@ -175,6 +175,11 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
         // No implementation
     }
 
+    /**
+     * Call by the leap font controller and get the pointable object
+     * @see com.cabrol.francois.localism.calibration.listener.LeapFrontController
+     * @param pointable the closer finger from the screen
+     */
     @Override
     public void frontMostPointableListener(Pointable pointable) {
         if(keysPressedCode.size() == 1){
