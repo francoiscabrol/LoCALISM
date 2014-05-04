@@ -23,20 +23,25 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created with IntelliJ IDEA.
- * User: francois * Date: 2014-01-23
+ * The frame that contains the calibration panel
+ * @author Francois Cabrol <francois.cabrol@live.fr>
+ * @since 2014-01-23
  */
 public class CalibrationFrame extends JFrame {
 
     public CalibrationFrame() throws HeadlessException {
         super("Leap screen calibration window" );
+        getContentPane().add( new CalibrationPanel() );
+        initFramePosition();
+        setVisible(true);
+    }
 
-        Container pane = getContentPane();
-        pane.add( new CalibrationPanel() );
-
+    /**
+     * Place the frame in the screen center
+     */
+    private void initFramePosition() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         setSize((int)dimension.getWidth()/2, (int)dimension.getHeight()/2);
-        setVisible( true );
         int x = (int) ((dimension.getWidth() - getWidth()) / 2);
         int y = (int) ((dimension.getHeight() - getHeight()) / 2);
         setLocation(x, y);
