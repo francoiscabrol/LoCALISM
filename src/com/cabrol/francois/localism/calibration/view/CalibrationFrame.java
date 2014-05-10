@@ -19,6 +19,8 @@
 
 package com.cabrol.francois.localism.calibration.view;
 
+import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -29,9 +31,9 @@ import java.awt.*;
  */
 public class CalibrationFrame extends JFrame {
 
-    public CalibrationFrame() throws HeadlessException {
+    public CalibrationFrame(AppScreenPlan appScreenPlan) throws HeadlessException {
         super("Leap screen calibration window" );
-        getContentPane().add( new CalibrationPanel() );
+        getContentPane().add( new CalibrationPanel(appScreenPlan) );
         initFramePosition();
         setVisible(true);
     }

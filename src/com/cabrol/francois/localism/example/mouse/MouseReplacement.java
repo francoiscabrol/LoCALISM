@@ -37,11 +37,11 @@ public class MouseReplacement implements LeapListener {
 
     private static MouseReplacement INSTANCE = null;
 
-    private boolean mouseOn = false;
     private AppScreenPlan appScreenPosition = new AppScreenPlan();
-    private Robot robot;
-    private boolean wasTouching = false;
     private FingerRelativeToScreen fingerRelativeToScreen;
+    private Robot robot;
+    private boolean mouseOn = false;
+    private boolean wasTouching = false;
 
 
     public MouseReplacement() {
@@ -73,6 +73,10 @@ public class MouseReplacement implements LeapListener {
 
     public FingerRelativeToScreen getFingerRelativeToScreen() {
         return fingerRelativeToScreen;
+    }
+
+    public void setAppScreenPosition(AppScreenPlan appScreenPosition) {
+        this.appScreenPosition = appScreenPosition;
     }
 
     @Override

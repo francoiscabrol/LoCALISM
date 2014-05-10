@@ -62,7 +62,7 @@ public class ConfigPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == calibrate){
-            calibrationFrame = new CalibrationFrame();
+            calibrationFrame = new CalibrationFrame(MouseReplacement.getInstance().getAppScreenPosition());
         }
         else if(e.getSource() == mouseOn){
             if(mouseOn.isSelected())

@@ -43,13 +43,16 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
 
     /** List of keyboard keys pressed */
     java.util.List<Integer> keysPressedCode = new ArrayList<>();
+    private AppScreenPlan appScreenPlan;
+    private FingerRelativeToScreen fingerRelativeToScreen;
 
     /**
      * Constructor
      * add the panel as LeapFrontController listener
      * and add key listener
      */
-    public CalibrationPanel() {
+    public CalibrationPanel(AppScreenPlan appScreenPlan) {
+        this.appScreenPlan =  appScreenPlan;
         LeapFrontController.getInstance().addLeapListener(this);
         setFocusable(true);
         addKeyListener(this);
@@ -67,18 +70,14 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
             g.setColor(Color.BLACK);
         }
 
-        //TODO Getting finger relative to screen and finger relative to screen independent from MouseReplacement
-        AppScreenPlan appScreenPosition = MouseReplacement.getInstance().getAppScreenPosition();
-        FingerRelativeToScreen fingerRelativeToScreen = MouseReplacement.getInstance().getFingerRelativeToScreen();
-
-        if(appScreenPosition.isDefined() && fingerRelativeToScreen != null){
-            drawFingerRelativeToScreen(g, appScreenPosition, fingerRelativeToScreen);
+        if(appScreenPlan.isDefined() && fingerRelativeToScreen != null){
+            drawFingerRelativeToScreen(g, appScreenPlan, fingerRelativeToScreen);
         }
         else{
-            drawMessage(g, appScreenPosition);
+            drawMessage(g, appScreenPlan);
         }
 
-        drawInformationAboutFingerAndScreen(g, appScreenPosition, fingerRelativeToScreen);
+        drawInformationAboutFingerAndScreen(g, appScreenPlan, fingerRelativeToScreen);
     }
 
     /**
@@ -183,22 +182,22 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
     @Override
     public void frontMostPointableListener(Pointable pointable) {
         if(keysPressedCode.size() == 1){
-            AppScreenPlan appScreenPosition = MouseReplacement.getInstance().getAppScreenPosition();
             if(keysPressedCode.get(0) == 18){    //ALT
-                if(appScreenPosition.getP1() == null)
-                    appScreenPosition.setP1(pointable.tipPosition().getX(), pointable.tipPosition().getY(), pointable.tipPosition().getZ());
-                else if(appScreenPosition.getP2() == null)
-                    appScreenPosition.setP2(pointable.tipPosition().getX(), pointable.tipPosition().getY(), pointable.tipPosition().getZ());
-                else if(appScreenPosition.getP3() == null)
-                    appScreenPosition.setP3(pointable.tipPosition().getX(), pointable.tipPosition().getY(), pointable.tipPosition().getZ());
+                if(appScreenPlan.getP1() == null)
+                    appScreenPlan.setP1(pointable.tipPosition().getX(), pointable.tipPosition().getY(), pointable.tipPosition().getZ());
+                else if(appScreenPlan.getP2() == null)
+                    appScreenPlan.setP2(pointable.tipPosition().getX(), pointable.tipPosition().getY(), pointable.tipPosition().getZ());
+                else if(appScreenPlan.getP3() == null)
+                    appScreenPlan.setP3(pointable.tipPosition().getX(), pointable.tipPosition().getY(), pointable.tipPosition().getZ());
                 else
-                    appScreenPosition.reset();
+                    appScreenPlan.reset();
                 keysPressedCode.remove((Integer) 18);
             }
-            MouseReplacement.getInstance().getAppScreenPosition().setAppHeight(getHeight());
-            MouseReplacement.getInstance().getAppScreenPosition().setAppWidth(getWidth());
-            MouseReplacement.getInstance().getAppScreenPosition().setAppWindowLocationOnScreen(getLocationOnScreen());
+            appScreenPlan.setAppHeight(getHeight());
+            appScreenPlan.setAppWidth(getWidth());
+            appScreenPlan.setAppWindowLocationOnScreen(getLocationOnScreen());
         }
+        fingerRelativeToScreen = appScreenPlan.getFingerRelativeToScreen(pointable);
         repaint();
     }
 }
