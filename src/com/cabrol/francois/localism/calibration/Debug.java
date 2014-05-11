@@ -20,8 +20,9 @@
 package com.cabrol.francois.localism.calibration;
 
 /**
- * Created with IntelliJ IDEA.
- * User: francois * Date: 2014-01-23
+ * The class that manage the printing while debugging
+ * @author Francois Cabrol <francois.cabrol@live.fr>
+ * @since 2014-01-23
  */
 public class Debug {
 
