@@ -23,7 +23,6 @@ import com.cabrol.francois.localism.calibration.listener.LeapFrontController;
 import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
 import com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;
 import com.cabrol.francois.localism.calibration.listener.LeapListener;
-import com.cabrol.francois.localism.example.mouse.MouseReplacement;
 import com.leapmotion.leap.*;
 import com.leapmotion.leap.Vector;
 
@@ -63,7 +62,7 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
     protected void paintComponent(Graphics g) {
         g.clearRect(0, 0, getWidth(), getHeight());
 
-        if(MouseReplacement.getInstance().getFingerRelativeToScreen() !=null && MouseReplacement.getInstance().getFingerRelativeToScreen().isTouching()){
+        if(fingerRelativeToScreen !=null && fingerRelativeToScreen.isTouching()){
             g.setColor(Color.BLUE);
         }
         else{
@@ -149,7 +148,7 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
             String p4 = "distance:" + fingerRelativeToScreen.getDistanceFromScreen() + " }";
             g.drawString(p4, getWidth()-500, 160);
         }
-        if(MouseReplacement.getInstance().getFingerRelativeToScreen() != null && MouseReplacement.getInstance().getFingerRelativeToScreen().isTouching())
+        if(fingerRelativeToScreen != null && fingerRelativeToScreen.isTouching())
             g.drawString("is touching the screen", getWidth()-500, 180);
     }
 

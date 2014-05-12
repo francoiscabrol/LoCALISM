@@ -87,10 +87,10 @@ public class MouseReplacement implements LeapListener {
 
             if(fingerRelativeToScreen!=null){
                 if(!wasTouching && fingerRelativeToScreen.isTouching()){
-                    robot.mousePress(InputEvent.BUTTON1_MASK);
+                    //robot.mousePress(InputEvent.BUTTON1_MASK);
                 }
                 else if(wasTouching && !fingerRelativeToScreen.isTouching()){
-                    robot.mouseRelease(InputEvent.BUTTON1_MASK);
+                    //robot.mouseRelease(InputEvent.BUTTON1_MASK);
                 }
             }
             wasTouching = fingerRelativeToScreen.isTouching();
