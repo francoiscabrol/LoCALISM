@@ -13,11 +13,18 @@ Now, I'd like to get localism work better and transform it in a simple screen ca
 
 ## Design
 ### Packages
-  - The calibration system: com.cabrol.francois.localism.calibration
-  - The examples: com.cabrol.francois.localism.example
+The is two principal package:
+	
+1. _com.cabrol.francois.localism.calibration_ with the calibration system in.
+2. _com.cabrol.francois.localism.example_ with all examples in.
+
+And two modules in two different folders:
+
+1. The folder *__src/__* contains Localism, the librairy.
+2. The folder *__MouseExample/__* contains the mouse replacement example using Localism.
 
 ###Dependences
-It need LeapJava.jar to work. Was tested with the version 1.0.9+8391 of
+It needs LeapJava.jar to work. Was tested with the version 1.0.9+8391 of
 the leap motion library for Java.
 
 
@@ -44,7 +51,7 @@ The basic uses of the library is the follow:
 			float xScreenAdj = appScreenPosition.leapCoordToScreenCoordX(fingerRelativeToScreen.getProjectionOfFinger().getX());
            float yScreenAdj = appScreenPosition.leapCoordToScreenCoordY(fingerRelativeToScreen.getProjectionOfFinger().getY());
            
-** I known that's could be really improved but it's my first library, I did my best! **
+** I imagine that's could be really improved, even if I did my best, it's my first library. If you have proposals, you're welcome! **
 
 ##Versions
 * The version 0.1.0 is the first release that show how the system could works.
