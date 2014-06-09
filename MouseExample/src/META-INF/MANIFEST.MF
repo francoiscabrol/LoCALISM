@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: com.cabrol.francois.localism.example.mouse.Localism
+Main-Class: main.java.com.cabrol.francois.localism.example.mouse.Localism
 

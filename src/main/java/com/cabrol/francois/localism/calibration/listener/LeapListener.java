@@ -17,7 +17,7 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.calibration.listener;
+package main.java.com.cabrol.francois.localism.calibration.listener;
 
 import com.leapmotion.leap.CircleGesture;
 import com.leapmotion.leap.Pointable;

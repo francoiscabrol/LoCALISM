@@ -17,10 +17,10 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.example.mouse.view;
+package main.java.com.cabrol.francois.localism.example.mouse.view;
 
-import com.cabrol.francois.localism.calibration.view.CalibrationFrame;
-import com.cabrol.francois.localism.example.mouse.MouseReplacement;
+import main.java.com.cabrol.francois.localism.calibration.view.CalibrationFrame;
+import main.java.com.cabrol.francois.localism.example.mouse.MouseReplacement;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

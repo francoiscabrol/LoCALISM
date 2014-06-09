@@ -17,38 +17,22 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.calibration;
+package main.java.com.cabrol.francois.localism.example.mouse;
 
-/**
- * The class that manage the printing while debugging
- * @author Francois Cabrol <francois.cabrol@live.fr>
- * @since 2014-01-23
- */
-public class Debug {
+import main.java.com.cabrol.francois.localism.calibration.listener.LeapFrontController;
+import main.java.com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
+import main.java.com.cabrol.francois.localism.example.mouse.view.ConfigFrame;
+import com.leapmotion.leap.Controller;
 
-    private static Debug INSTANCE = null;
+public class Localism {
 
-    private boolean view = true;
-    private boolean leap = true;
+    public static void main(String[] args) {
+        AppScreenPlan appScreenPlan = new AppScreenPlan();
+        MouseReplacement.getInstance().setAppScreenPosition(appScreenPlan);
+        LeapFrontController.getInstance().addLeapListener(MouseReplacement.getInstance());
+        Controller controller = new Controller(LeapFrontController.getInstance());
 
-    public Debug() {
-    }
-
-    public synchronized static Debug getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new Debug();
-        }
-        return INSTANCE;
-    }
-
-    public void view(String msg){
-        if(view)
-            System.out.println("[VIEW] " + msg);
-    }
-
-    public void leap(String msg){
-        if(leap)
-            System.out.println("[LEAP] " + msg);
+        ConfigFrame frame = new ConfigFrame();
     }
 
 }

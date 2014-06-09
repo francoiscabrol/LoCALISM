@@ -17,22 +17,32 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.example.mouse;
+package main.java.com.cabrol.francois.localism.example.mouse;
 
-import com.cabrol.francois.localism.calibration.listener.LeapFrontController;
-import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
-import com.cabrol.francois.localism.example.mouse.view.ConfigFrame;
-import com.leapmotion.leap.Controller;
+/**
+ * @author Francois Cabrol <francois.cabrol@live.fr>
+ * @since 2014-05-03
+ */
+public class Debug {
 
-public class Localism {
+    private static Debug INSTANCE = null;
 
-    public static void main(String[] args) {
-        AppScreenPlan appScreenPlan = new AppScreenPlan();
-        MouseReplacement.getInstance().setAppScreenPosition(appScreenPlan);
-        LeapFrontController.getInstance().addLeapListener(MouseReplacement.getInstance());
-        Controller controller = new Controller(LeapFrontController.getInstance());
+    private boolean mouse = true;
+    private boolean leap = true;
 
-        ConfigFrame frame = new ConfigFrame();
+    public Debug() {
+    }
+
+    public synchronized static Debug getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new Debug();
+        }
+        return INSTANCE;
+    }
+
+    public void mouse(String msg){
+        if(mouse)
+            System.out.println("[MOUSE] " + msg);
     }
 
 }

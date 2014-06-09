@@ -17,17 +17,18 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.cabrol.francois.localism.example.mouse;
+package main.java.com.cabrol.francois.localism.calibration;
 
 /**
+ * The class that manage the printing while debugging
  * @author Francois Cabrol <francois.cabrol@live.fr>
- * @since 2014-05-03
+ * @since 2014-01-23
  */
 public class Debug {
 
     private static Debug INSTANCE = null;
 
-    private boolean mouse = true;
+    private boolean view = true;
     private boolean leap = true;
 
     public Debug() {
@@ -40,9 +41,14 @@ public class Debug {
         return INSTANCE;
     }
 
-    public void mouse(String msg){
-        if(mouse)
-            System.out.println("[MOUSE] " + msg);
+    public void view(String msg){
+        if(view)
+            System.out.println("[VIEW] " + msg);
+    }
+
+    public void leap(String msg){
+        if(leap)
+            System.out.println("[LEAP] " + msg);
     }
 
 }
