@@ -17,9 +17,9 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package main.java.com.cabrol.francois.localism.calibration.listener;
+package com.cabrol.francois.localism.calibration.listener;
 
-import main.java.com.cabrol.francois.localism.calibration.Debug;
+import com.cabrol.francois.localism.calibration.Debug;
 import com.leapmotion.leap.*;
 
 import java.util.ArrayList;

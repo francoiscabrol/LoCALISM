@@ -17,7 +17,7 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package main.java.com.cabrol.francois.localism.calibration;
+package com.cabrol.francois.localism.calibration;
 
 /**
  * The class that manage the printing while debugging

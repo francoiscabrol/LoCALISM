@@ -17,12 +17,12 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package main.java.com.cabrol.francois.localism.calibration.view;
+package com.cabrol.francois.localism.calibration.view;
 
-import main.java.com.cabrol.francois.localism.calibration.listener.LeapFrontController;
-import main.java.com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
-import main.java.com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;
-import main.java.com.cabrol.francois.localism.calibration.listener.LeapListener;
+import com.cabrol.francois.localism.calibration.listener.LeapFrontController;
+import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
+import com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;
+import com.cabrol.francois.localism.calibration.listener.LeapListener;
 import com.leapmotion.leap.*;
 import com.leapmotion.leap.Vector;
 
@@ -41,7 +41,7 @@ import java.util.*;
 public class CalibrationPanel extends JPanel implements KeyListener, LeapListener {
 
     /** List of keyboard keys pressed */
-    java.util.List<Integer> keysPressedCode = new ArrayList<>();
+    java.util.List<Integer> keysPressedCode = new ArrayList<Integer>();
     private AppScreenPlan appScreenPlan;
     private FingerRelativeToScreen fingerRelativeToScreen;
 
@@ -175,7 +175,7 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
 
     /**
      * Call by the leap font controller and get the pointable object
-     * @see main.java.com.cabrol.francois.localism.calibration.listener.LeapFrontController
+     * @see com.cabrol.francois.localism.calibration.listener.LeapFrontController
      * @param pointable the closer finger from the screen
      */
     @Override

@@ -17,9 +17,9 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package main.java.com.cabrol.francois.localism.calibration.view;
+package com.cabrol.francois.localism.calibration.view;
 
-import main.java.com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
+import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
 
 import javax.swing.*;
 import java.awt.*;

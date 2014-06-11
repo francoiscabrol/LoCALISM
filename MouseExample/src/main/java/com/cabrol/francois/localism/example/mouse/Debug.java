@@ -17,7 +17,7 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package main.java.com.cabrol.francois.localism.example.mouse;
+package com.cabrol.francois.localism.example.mouse;
 
 /**
  * @author Francois Cabrol <francois.cabrol@live.fr>

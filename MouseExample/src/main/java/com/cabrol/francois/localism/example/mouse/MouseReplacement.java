@@ -17,11 +17,11 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package main.java.com.cabrol.francois.localism.example.mouse;
+package com.cabrol.francois.localism.example.mouse;
 
-import main.java.com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
-import main.java.com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;
-import main.java.com.cabrol.francois.localism.calibration.listener.LeapListener;
+import com.cabrol.francois.localism.calibration.screen.AppScreenPlan;
+import com.cabrol.francois.localism.calibration.screen.FingerRelativeToScreen;
+import com.cabrol.francois.localism.calibration.listener.LeapListener;
 import com.leapmotion.leap.CircleGesture;
 import com.leapmotion.leap.Gesture;
 import com.leapmotion.leap.Pointable;

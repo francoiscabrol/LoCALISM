@@ -17,7 +17,7 @@
  *     along with LoCALISM.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package main.java.com.cabrol.francois.localism.calibration.screen;
+package com.cabrol.francois.localism.calibration.screen;
 
 import com.leapmotion.leap.Pointable;
 import com.leapmotion.leap.Vector;

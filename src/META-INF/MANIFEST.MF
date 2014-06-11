@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: ./LeapJava.jar .
-Main-Class: main.java.com.cabrol.francois.localism.example.mouse.Localism
-
