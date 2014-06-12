@@ -23,18 +23,31 @@ And two modules in two different folders:
 1. The folder *__Localism__* contains Localism, the librairy.
 2. The folder *__MouseExample/__* contains the mouse replacement example using Localism.
 
-###Dependences
+### Dependences
 It needs LeapJava.jar to work. Was tested with the version 1.0.9+8391 of
 the leap motion library for Java.
 The __./bin/__ folder contains the dependencies needed under macos. Replace that files under windows or linux.
 
-###Now the build system is apache buildr
+### The build system is Apache Buildr
 - You need to install buildr if you use it for the first time. It is pretty fast and you can use the official documentation at [http://buildr.apache.org/installing.html](http://buildr.apache.org/installing.html).
+- To build the projec, just use the command
+
+		buildr
+		
 - To build the project and execute the example "MouseExample", in the root directory, please execute the command line is
 		
 		buildr run
 		
 - The configuration is in the buildr file __buildr__
+
+### Import the project in your IDEA
+For example, to import the project in intellij:
+	- Use the command line "buildr idea" to generate intellij project files.
+	- Then open the project by opening the .ipr generated.
+	- In intellij, fix some problem like select the good version of the java compiler (java 7).
+	- Now, it should good. You can compile with intellij or use buildr command line.
+
+There is the same support for other IDE as Eclipse or Netbeans so refer you to the [online documentation](http://buildr.apache.org/installing.html).
 
 
 ## How to use it?
