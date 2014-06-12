@@ -45,7 +45,7 @@ For example, to import the project in intellij:
 	- Use the command line "buildr idea" to generate intellij project files.
 	- Then open the project by opening the .ipr generated.
 	- In intellij, fix some problem like select the good version of the java compiler (java 7).
-	- Now, it should good. You can compile with intellij or use buildr command line.
+	- Now, it should be good. You can compile with intellij or use buildr command line.
 
 There is the same support for other IDE as Eclipse or Netbeans so refer you to the [online documentation](http://buildr.apache.org/installing.html).
 
