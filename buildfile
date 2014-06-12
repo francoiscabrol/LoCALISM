@@ -5,7 +5,7 @@
 VERSION_NUMBER = "0.2.1"
 # Group identifier for your projects
 GROUP = "LoCALISM"
-COPYRIGHT = ""
+COPYRIGHT = "François Cabrol"
 
 # Specify Maven 2.0 remote repositories here, like this:
 repositories.remote << "http://repo1.maven.org/maven2"
