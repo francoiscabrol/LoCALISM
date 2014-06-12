@@ -30,17 +30,17 @@ The __./bin/__ folder contains the dependencies needed under macos. Replace that
 
 ### The build system is Apache Buildr
 - You need to install buildr if you use it for the first time. It is pretty fast and you can use the official documentation at [http://buildr.apache.org/installing.html](http://buildr.apache.org/installing.html).
-- To build the projec, just use the command
+- To build the project, just use the command
 
 		buildr
 		
-- To build the project and execute the example "MouseExample", in the root directory, please execute the command line is
+- To build the project and execute the example "MouseExample", in the root directory, please execute the command line
 		
 		buildr run
 		
-- The configuration is in the buildr file __buildr__
+- The configuration is in the buildr file __buildfile__
 
-### Import the project in your IDEA
+### Import the project in your IDE
 For example, to import the project in intellij:
 	- Use the command line "buildr idea" to generate intellij project files.
 	- Then open the project by opening the .ipr generated.
