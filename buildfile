@@ -7,6 +7,11 @@ VERSION_NUMBER = "0.2.1"
 GROUP = "LoCALISM"
 COPYRIGHT = "François Cabrol"
 
+# Define java leap library path
+LEAP_LIB_PATH = "lib/leap_v1"
+LEAPJAVA = Dir[LEAP_LIB_PATH + '/LeapJava.jar']
+
+
 # Specify Maven 2.0 remote repositories here, like this:
 repositories.remote << "http://repo1.maven.org/maven2"
 
@@ -20,17 +25,17 @@ define "LoCALISM" do
   manifest["Implementation-Vendor"] = COPYRIGHT
 
   define "Localism" do
-    compile.with Dir['lib/LeapJava.jar']
+    compile.with LEAPJAVA
     package(:jar)
   end
 
   define "MouseExample" do
-    compile.with projects("Localism"), Dir['lib/LeapJava.jar']
+    compile.with projects("Localism"), LEAPJAVA
     package(:jar)
   end
 
   task :run => :compile do
-    system 'java -cp MouseExample/target/classes:Localism/target/classes:lib/LeapJava.jar -Djava.library.path=lib/  com.cabrol.francois.localism.example.mouse.Localism'
+    system 'java -cp MouseExample/target/classes:Localism/target/classes:' + LEAP_LIB_PATH + '/LeapJava.jar -Djava.library.path=' + LEAP_LIB_PATH + ' com.cabrol.francois.localism.example.mouse.Localism'
   end
 
 end

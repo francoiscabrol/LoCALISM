@@ -110,8 +110,8 @@ public class CalibrationPanel extends JPanel implements KeyListener, LeapListene
      * @param fingerRelativeToScreen finger projection to draw
      */
     private void drawFingerRelativeToScreen(Graphics g, AppScreenPlan appScreenPosition, FingerRelativeToScreen fingerRelativeToScreen) {
-        int xAdj = appScreenPosition.leapCoordToAppCoordX(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getX());
-        int yAdj =  appScreenPosition.leapCoordToAppCoordY(fingerRelativeToScreen.getProjectionOfFingerWithDirection().getY());
+        int xAdj = appScreenPosition.leapCoordToAppCoordX(fingerRelativeToScreen.getFrontFingerVector().getX());
+        int yAdj =  appScreenPosition.leapCoordToAppCoordY(fingerRelativeToScreen.getFrontFingerVector().getY());
         int ray = 10;
         g.drawOval((xAdj - (ray/2)), (yAdj - (ray/2)), ray, ray);
     }
