@@ -1,7 +1,7 @@
 LoCALISM - Leap CALIbration SysteM
 ==============
 
-A mouse replacement system using leap motion and based on a screen calibration tool.
+A screen calibration tool for the leap motion and a mouse replacement small app as example of use.
 --------------
 
 *Written in Java*
