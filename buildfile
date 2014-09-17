@@ -8,7 +8,7 @@ GROUP = "LoCALISM"
 COPYRIGHT = "François Cabrol"
 
 # Define java leap library path
-LEAP_LIB_PATH = "lib/leap_v1"
+LEAP_LIB_PATH = "lib/leap_v2"
 LEAPJAVA = Dir[LEAP_LIB_PATH + '/LeapJava.jar']
 
 
